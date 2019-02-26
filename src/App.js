@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { 
-  BrowserRouter, 
-  Switch, 
-  Route
+  BrowserRouter,
+  Route,
+  Switch
 } from 'react-router-dom'
 
+import Navbar from './components/Navbar'
 import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -29,6 +30,7 @@ class App extends Component {
       grid-area: nav;
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
       background-color: #24241C;
     `;
@@ -57,25 +59,25 @@ class App extends Component {
     `;
 
     return (
-      <Wrapper>
-        <Nav>
-          Nav
-        </Nav>
-        <Main>
-          <Content>
-            <BrowserRouter>
+      <BrowserRouter>
+        <Wrapper>
+          <Nav>
+            <Navbar />
+          </Nav>
+          <Main>
+            <Content>
               <Switch>
-                <Route exact path='/' component={Portfolio} />
-                <Route path='/about' component={About} />
-                <Route path='/contact' component={Contact} />
+                <Route activeClassName='active' path='/' component={Portfolio} exact />
+                <Route activeClassName='active' path='/about' component={About} />
+                <Route activeClassName='active' path='/contact' component={Contact} />
               </Switch>
-            </BrowserRouter>
-          </Content>
-        </Main>
-        <Footer>
-          Footer
-        </Footer>
-      </Wrapper>
+            </Content>
+          </Main>
+          <Footer>
+            Footer
+          </Footer>
+        </Wrapper>
+      </BrowserRouter>
     )
   }
 }
