@@ -21,20 +21,9 @@ const Navbar = () => {
     height: 100%;
     padding: 1rem;
     box-sizing: border-box;
-    position: relative;
     font-weight: 300;
     text-transform: uppercase;
     user-select: none;
-
-    &::before {
-      content: "";
-      width: 1px;
-      position: absolute;
-      left: 0;
-      top: 1rem;
-      bottom: 1rem;
-      background-color: black;
-    }
     &.active {
       opacity: .5;
     }
