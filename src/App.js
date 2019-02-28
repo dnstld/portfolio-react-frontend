@@ -65,13 +65,11 @@ class App extends Component {
             <Navbar />
           </Nav>
           <Main>
-            <Content>
-              <Switch>
-                <Route activeClassName='active' path='/' component={Portfolio} exact />
-                <Route activeClassName='active' path='/about' component={About} />
-                <Route activeClassName='active' path='/contact' component={Contact} />
-              </Switch>
-            </Content>
+            <Switch>
+              <Route activeClassName='active' path='/' component={Portfolio} exact />
+              <Route activeClassName='active' path='/about' component={About} />
+              <Route activeClassName='active' path='/contact' component={Contact} />
+            </Switch>
           </Main>
           <Footer>
             Footer

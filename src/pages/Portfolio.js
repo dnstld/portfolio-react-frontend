@@ -4,6 +4,8 @@ import api from '../services/api'
 import PortfolioItem from '../components/PortfolioItem'
 import socket from 'socket.io-client'
 
+import PortfolioHeader from '../components/PortfolioHeader'
+
 import styled from 'styled-components'
 
 export default class Portfolio extends Component {
@@ -36,9 +38,14 @@ export default class Portfolio extends Component {
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
 
       @media (min-width: 600px) {
         grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem;
       }
       @media (min-width: 900px) {
         grid-template-columns: repeat(3, 1fr);
@@ -46,11 +53,15 @@ export default class Portfolio extends Component {
     `;
 
     return (
-      <PortfolioList>
-        { this.state.portfolio.map(portfolio => (
-          <PortfolioItem key={portfolio._id} portfolio={portfolio} />
-        ))}
-      </PortfolioList>
+      <div>
+        <PortfolioHeader />
+
+        <PortfolioList>
+          { this.state.portfolio.map(portfolio => (
+            <PortfolioItem key={portfolio._id} portfolio={portfolio} />
+          ))}
+        </PortfolioList>
+      </div>
     )
   }
 }
