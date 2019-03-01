@@ -34,6 +34,8 @@ export default class Portfolio extends Component {
   }
 
   render() {
+    const Portfolio = styled.div`
+    `;
     const PortfolioList = styled.ul `
       display: grid;
       grid-template-columns: 1fr;
