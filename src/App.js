@@ -9,13 +9,11 @@ import Navbar from './components/Navbar'
 import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import Contact from './pages/Contact'
-
-import styled from 'styled-components'
-
 import SocialMedia from './components/SocialMedia'
 
-import 'normalize.css'
-import './App.css'
+import styled from 'styled-components'
+import { Normalize } from 'styled-normalize'
+import GlobalStyle from './styles/global'
 
 class App extends Component {
   render() {
@@ -52,6 +50,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Wrapper>
+          <Normalize />
+          <GlobalStyle />
+
           <Nav>
             <Navbar />
           </Nav>
