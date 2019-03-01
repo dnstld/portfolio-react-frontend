@@ -12,6 +12,8 @@ import Contact from './pages/Contact'
 
 import styled from 'styled-components'
 
+import SocialMedia from './components/SocialMedia'
+
 import 'normalize.css'
 import './App.css'
 
@@ -46,17 +48,6 @@ class App extends Component {
       background-color: #24241C;
       color: white;
     `;
-    const Content = styled.div`
-      width: 100%;
-      box-sizing: border-box;
-      max-width: 1200px;
-      height: inherit;
-      margin: 0 auto;
-
-      @media (min-width: 600px) {
-        padding: 1.5rem;
-      }
-    `;
 
     return (
       <BrowserRouter>
@@ -72,7 +63,7 @@ class App extends Component {
             </Switch>
           </Main>
           <Footer>
-            Footer
+            <SocialMedia />
           </Footer>
         </Wrapper>
       </BrowserRouter>

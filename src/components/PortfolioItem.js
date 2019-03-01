@@ -89,9 +89,6 @@ export default class PortfolioItem extends Component {
       margin-right: .25rem;
       margin-top: .25rem;
     `;
-    const Description = styled.div `
-      
-    `;
     const Text = styled.span `
       display: block;
       white-space: nowrap;
@@ -130,10 +127,10 @@ export default class PortfolioItem extends Component {
                 </Tool>
               </List>
             </Tools>
-            <Description>
+            <span>
               <Label>Description:</Label>
               <Text>{portfolio.description}</Text>
-            </Description>
+            </span>
           </Content>
         </Link>
       </Item>
