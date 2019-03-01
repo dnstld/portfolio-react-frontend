@@ -8,6 +8,8 @@ import PortfolioHeader from '../components/PortfolioHeader'
 
 import styled from 'styled-components'
 
+import { media } from '../styles/media'
+
 export default class Portfolio extends Component {
   state = {
     portfolio: []
@@ -43,13 +45,13 @@ export default class Portfolio extends Component {
       margin: 0 auto;
       box-sizing: border-box;
 
-      @media (min-width: 600px) {
+      ${media.sm`
         grid-template-columns: repeat(2, 1fr);
         padding: 1.5rem;
-      }
-      @media (min-width: 900px) {
+      `}
+      ${media.md`
         grid-template-columns: repeat(3, 1fr);
-      }
+      `}
     `;
 
     return (

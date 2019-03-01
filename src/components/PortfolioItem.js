@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
+import { media } from '../styles/media'
+
 export default class PortfolioItem extends Component {
   render() {
     const { portfolio } = this.props
@@ -12,9 +14,9 @@ export default class PortfolioItem extends Component {
                   0 1px 5px 0 rgba(0,0,0,0.2);
       user-select: none;
 
-      @media (min-width: 600px) {
+      ${media.sm`
         border-radius: .25rem;
-      }
+      `}
     `;
     const Link = styled.a `
       display: block;
