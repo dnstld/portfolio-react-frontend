@@ -81,15 +81,16 @@ export default class PortfolioItem extends Component {
       display: flex;
       flex-wrap: wrap;
     `;
-    const Tool = styled.li `
-      display: inline-block;
+    const ListItem = styled.li `
+      display: flex;
+    `;
+    const Tool = styled.span `
       font-size: 0.625rem;
       background-color: #24241C;
       color: #fff;
       border-radius: .25rem;
       padding: .25rem .5rem;
-      margin-right: .25rem;
-      margin-top: .25rem;
+      margin: .25rem .25rem 0 0;
     `;
     const Text = styled.span `
       display: block;
@@ -110,7 +111,7 @@ export default class PortfolioItem extends Component {
       <Item>
         <Link href="#">
           <Header>
-            <Avatar>A</Avatar>
+            <Avatar>{portfolio.client.charAt(0).toUpperCase()}</Avatar>
             <Info>
               <Client>{portfolio.client}</Client>
               <Title>{portfolio.title}</Title>
@@ -122,11 +123,13 @@ export default class PortfolioItem extends Component {
           </ImageContainer>
           <Content>
             <Tools>
-              <Label>{portfolio.tools}</Label>
+              <Label>Tools:</Label>
               <List>
-                <Tool>
-                  {portfolio.category}
-                </Tool>
+                <ListItem>
+                  {portfolio.tools.map(tool => (
+                    <Tool>{tool}</Tool>
+                  ))}
+                </ListItem>
               </List>
             </Tools>
             <span>

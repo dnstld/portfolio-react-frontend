@@ -41,15 +41,14 @@ export default class PortfolioHeader extends Component {
       flex-direction: column;
       text-align: center;
       font-weight: 300;
-      font-size: txt-medium;
+      font-size: 1.5rem;
       padding: 0 1.5rem;
 
       ${media.sm`
         font-size: 2rem;
       `}
       ${media.md`
-        max-width: 50%;
-        font-size: 2.5rem;
+        max-width: 75%;
       `}
     `;
     const LatestMessage = styled.span`
