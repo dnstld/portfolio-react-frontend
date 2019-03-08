@@ -60,6 +60,8 @@ export default class PortfolioItem extends Component {
       height: 0;
       padding-bottom: 56.25%; /* 1280x720px (hd video 16:9) */
       background-color: #f1f1f1;
+      border-top: 1px solid #f1f1f1;
+      border-bottom: 1px solid #f1f1f1;
     `;
     const Image = styled.img `
       width: 100%;
@@ -128,7 +130,7 @@ export default class PortfolioItem extends Component {
               <List>
                 <ListItem>
                   {portfolio.tools.map(tool => (
-                    <Tool>{tool}</Tool>
+                    <Tool key={tool}>{tool}</Tool>
                   ))}
                 </ListItem>
               </List>
