@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Moment from 'moment'
 import styled from 'styled-components'
 
 import { media } from '../styles/media'
@@ -116,14 +117,14 @@ export default class PortfolioItem extends Component {
               <Client>{portfolio.client}</Client>
               <Title>{portfolio.title}</Title>
             </Info>
-            <Date>{portfolio.date}</Date>
+            <Date>{Moment(portfolio.createdAt).format('ll')}</Date>
           </Header>
           <ImageContainer>
             <Image src={portfolio.imageUrl} alt={portfolio.imageAlt} />
           </ImageContainer>
           <Content>
             <Tools>
-              <Label>Tools:</Label>
+              <Label>Tools: {portfolio.createAt}</Label>
               <List>
                 <ListItem>
                   {portfolio.tools.map(tool => (
