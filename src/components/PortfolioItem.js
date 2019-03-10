@@ -126,7 +126,7 @@ export default class PortfolioItem extends Component {
             <Date>{Moment(portfolio.createdAt).format('ll')}</Date>
           </Header>
           <ImageContainer>
-            <Image src={portfolio.imageUrl} alt={portfolio.imageAlt} />
+            <Image src={portfolio.imageThumbUrl} alt={portfolio.imageAlt} />
           </ImageContainer>
           <Content>
             <Tools>
