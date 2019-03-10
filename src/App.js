@@ -7,6 +7,7 @@ import {
 
 import Navbar from './components/Navbar'
 import Portfolio from './pages/Portfolio'
+import Show from './pages/Show'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import SocialMedia from './components/SocialMedia'
@@ -61,6 +62,7 @@ class App extends Component {
               <Route activeClassName='active' path='/' component={Portfolio} exact />
               <Route activeClassName='active' path='/about' component={About} />
               <Route activeClassName='active' path='/contact' component={Contact} />
+              <Route path='/portfolio/:id' component={Show} />
             </Switch>
           </Main>
           <Footer>

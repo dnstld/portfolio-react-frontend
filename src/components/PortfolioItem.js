@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Moment from 'moment'
 import styled from 'styled-components'
@@ -19,7 +20,7 @@ export default class PortfolioItem extends Component {
         border-radius: .25rem;
       `}
     `;
-    const Link = styled.a `
+    const StyledLink = styled(NavLink) `
       display: block;
       height: 100%;
     `;
@@ -112,7 +113,10 @@ export default class PortfolioItem extends Component {
 
     return (
       <Item>
-        <Link href="#">
+        <StyledLink to={{
+          pathname: `/portfolio/${portfolio._id}`,
+          state: { portfolio }
+        }}>
           <Header>
             <Avatar>{portfolio.client.charAt(0).toUpperCase()}</Avatar>
             <Info>
@@ -126,7 +130,7 @@ export default class PortfolioItem extends Component {
           </ImageContainer>
           <Content>
             <Tools>
-              <Label>Tools: {portfolio.createAt}</Label>
+              <Label>Tools:</Label>
               <List>
                 <ListItem>
                   {portfolio.tools.map(tool => (
@@ -140,7 +144,7 @@ export default class PortfolioItem extends Component {
               <Text>{portfolio.description}</Text>
             </span>
           </Content>
-        </Link>
+        </StyledLink>
       </Item>
     )
   }
